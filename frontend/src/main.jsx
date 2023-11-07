@@ -7,14 +7,21 @@ import {
 import './index.css'
 import Root from "./routes/root";
 import ErrorPage from './error-page';
+import Team from './routes/team';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />
-  }
-])
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "teams/:teamId",
+        element: <Team />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

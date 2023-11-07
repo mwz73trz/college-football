@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 const Root = () => {
   return (
     <>
@@ -26,15 +28,17 @@ const Root = () => {
         <nav>
           <ul>
             <li>
-              <a href={`/teams/1`}>Team One</a>
+              <Link to={`/teams/1`}>Team One</Link>
             </li>
             <li>
-              <a href={`/teams/2`}>Team Two</a>
+              <Link to={`/teams/2`}>Team Two</Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
